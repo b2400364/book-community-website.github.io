@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Home Page</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+        <style>
+            .subtitle-content{max-height: 0;
+                            opacity: 0;
+                            overflow: hidden;
+                            transition: all 0.5s ease-in-out;}
+            .feature-item:hover .subtitle-content{max-height: 1000px;
+                                                opacity: 1;
+                                                margin-top: 10px;}
+            .subtitle-content img{width: 100%;
+                                max-width: 300px;
+                                height: auto;}
+            .trending-books{list-style: none;
+                            padding: 0;}
+            .trending-books li{margin-bottom: 20px;}
+            .trending-books img{width: 200px;
+                                height: auto;
+                                display: block;
+                                margin-bottom: 5px;}
+            .reveal{opacity:0;
+                    transform:translate(50px);
+                    transition: all 0.8s ease-out;/*This makes it smooth*/}
+            .reveal.active{opacity:1;
+                            transform: translateY(0);}
+            section{padding:50px 0;
+                    margin-bottom: 30px;}
+        </style>
+    </head>
+    <body>
+        <section class="reveal">
+            <img src="book community banner two.png" alt="Book Community Banner">
+            <title>Book Community</title>
+            <h1>Welcome to Book Community!</h1>
+            <p>A friendly online community for readers to discover books, 
+            share reviews, and connect with other book lovers.</p>
+            <main>
+                <div class="feature-item">
+                    <h2 class="header">Hero Section</h2>
+                    <div class="subtitle-content">
+                        <p>"The Digital Bookshelf for Every Reader"<br>
+                        Your reading life, organized and social. 
+                        Experience a dedicated platform designed to help you connect with fellow enthusiasts, document your literary journey, and discover trending titles before they hit the charts. 
+                        With interactive forums and personalized reading logs, we provide the tools you need to manage your collection and share your passion. 
+                        Your next great adventure is just a click away.</p>
+                    </div>
+
+                    <h2 class="header">"Why Join Our Community"</h2>
+                    <div class="subtitle-content">
+                        <img src="whyjoinourcommunity.jpg" alt="why join our community">
+                        <p>Interative Reading Logs<br>
+                        Keep a digital diary of every book you finish. 
+                        Rate,review,and organize you collection by genre or mood.</p>
+                        <a href="whyjoinourcommunity.html">Learn more!</a>
+                    </div>
+
+                    <h2 class="header">Trending This Week</h2>
+                    <img src="trending this week.png" alt="Trendinf This Week">
+                    <div class="subtitle-content">
+                        <p>"What Everyone is Reading?"</p>
+                        <ul class="trending-books">
+                            <li>
+                                <img src="the-midnight-library.jpg" alt="The Midnight Library">
+                                <p>The Midnight Library by Matt Haig</p>
+                            </li>
+                            <li>
+                                <img src="sophie world.avif" alt="Sophie's World">
+                                <p>Sophie's World by Jostein Gaarder</p>
+                            </li>
+                            <li>
+                                <img src="project hail mary.jpg" alt="Project Hail Mary">
+                                <p>Project Hail Mary by Andy Weir</p>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <h2 class="header">Latest from the Forums</h2>
+                    <img src="latest from the forum.png" alt="Latest From the Forums">
+                    <div class="subtitle-content">
+                        <h4>The Heart of the Community: Book Reviews & Beyond</h4>
+                        <p>
+                            "Our forums are more than just a comment section; they are a living, breathing library of opinions. 
+                            Whether you want to post a 1,000-word deep dive into a classic or just see if a new release is worth your time, the forums allow you to engage with real readers in real-time. 
+                            Filter by genre, search for specific titles, and help others find their next great read by sharing your honest thoughts."
+                        </p>
+                        <button>
+                            <a href="bookreviews.html">Go to Forums!</a>
+                        </button>
+                    </div>
+
+                    <h2 class="header">Reading Resources</h2>
+                    <img src="resourcepage banner.png" alt="Reading Resources">
+                    <div class="sub-title">
+                        <h4>Level Up Your Reading Journey</h4>
+                        <p>
+                            "Everything you need to go from a casual reader to a true bibliophile. 
+                            Explore our curated guides and challenges."
+                        </p>
+                        <button>
+                            <a href="readingresource.html">Go to Reading Resources!</a>
+                        </button>
+                    </div>
+                </div>
+            </main>
+        </section>
+        <script>
+            const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+            // If the section is visible on the screen
+            if (entry.isIntersecting) {
+                 entry.target.classList.add('active');
+            } else {
+            // Optional: remove this if you only want the animation to happen once
+            entry.target.classList.remove('active');
+            }
+            });
+            }, { threshold: 0.1 }); // Trigger when 10% of the section is visible
+
+            // Tell the observer to watch every element with the 'reveal' class
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach((el) => observer.observe(el));
+        </script>
+
+        <footer>
+            <p>Copyright &copy; 2026 Book Community</p>
+       </footer>
+    <script src="javascript.js"></script>    
+    </body>
+</html>

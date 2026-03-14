@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Reading Resources</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style3.css">
+        <style>
+            .reveal{opacity:0;
+                    transform:translate(50px);
+                    transition: all 0.8s ease-out;/*This makes it smooth*/}
+            .reveal.active{opacity:1;
+                           transform: translateY(0);}
+        </style>
+    </head>
+    <body>
+
+    <div id="progressBar"></div>
+        <section class="reveal">
+            <img src="book community banner two.png" alt="Book Community Banner">
+            <h1>Reading Resources</h1>
+            <h4>Level Up Your Reading Journey</h4>
+            <p>
+                "Everything you need to go from a casual reader to a true bibliophile. 
+                Explore our curated guides and challenges."
+            </p>
+            <a href="home.html">Home Page!</a>
+            <img src="resourcepage banner.png" alt="Resources Page">
+        </section>
+
+        <section class="reveal">
+            <img src="reading tips.png" alt="Reading Tips">
+            <h2>Reading Tips</h2>
+            <p>
+                Build a healthy reading habit with simple techniques.
+                Set aside dedicated reading time, create a comfortable reading space, and track your progress using reading journals or apps.
+                Small daily reading sessions can quickly turn into a lifelong habit.
+            </p>
+        </section>
+
+        <section class="reveal">
+            <img src="explore genre book.png" alt="Explore Book Genres">
+            <h2>Explore Book Genres</h2>
+            <p>
+                Not sure what to read next?
+                Explore different genres like fantasy, mystery, science fiction, romance, and philosophy.
+                Trying new genres can help readers discover unexpected favorites and broaden their reading experience.
+            </p>
+        </section>
+
+        <section class="reveal">
+            <img src="Monthly Book Challenges.png" alt="Monthly Reading Challenge">
+            <h2>Monthly Reading Challenge</h2>
+            <p>
+                Join our monthly reading challenge and set fun goals for yourself. 
+                Whether it's reading five books in a month or exploring a new genre, challenges help keep reading exciting and motivate readers to explore more stories.
+            </p>
+        </section>
+        <script>
+            const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+            // If the section is visible on the screen
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            } else {
+            // Optional: remove this if you only want the animation to happen once
+            entry.target.classList.remove('active');
+            }
+            });
+            }, { threshold: 0.1 }); // Trigger when 10% of the section is visible
+
+            // Tell the observer to watch every element with the 'reveal' class
+            const revealElements = document.querySelectorAll('.reveal');
+            revealElements.forEach((el) => observer.observe(el));
+        </script>
+        <script src="javascript.js"></script>
+    </body>
+</html>
