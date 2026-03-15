@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Book Reviews</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style.css">
+        <style>
+            .review-container{display: grid;
+                                grid-template-columns: repeat(3,1fr);
+                                gap: 25px;
+                                margin-top: 30px;}
+            .review-card h2{margin-top: 0;}
+            .rating{font-weight: bold;
+                    margin-bottom: 10px;}
+            .reveal{opacity: 0;
+                    transform: translate(50px);
+                    transition: all 0.8s ease-out;}
+            .reveal.active{opacity: 1;
+                            transform: translate(0);}
+        </style>
+    </head>
+    <body>
+        <section class="reveal">
+            <img src="book community banner two.png" alt="Book Community Banner">
+            <h1>Book Review & Discussion</h1>
+            <p>
+                "Our forums are more than just a comment section; they are a living, breathing library of opinions. 
+                Whether you want to post a 1,000-word deep dive into a classic or just see if a new release is worth your time, the forums allow you to engage with real readers in real-time. 
+                Filter by genre, search for specific titles, and help others find their next great read by sharing your honest thoughts."
+            </p>
+            <a href="home.html" class="button"> Home Page!</a>
+
+            <div class="review-container">
+
+                <div class="review-card reveal">
+                    <img src="the spoiler room.png" alt="The Spoiler Room">
+                    <h2>The Spoiler Room</h2>
+                    <p class="rating">Discussion Forum</p>
+                    <p>
+                        "Just finished a massive cliffhanger? 
+                        This is the safe space to discuss plot twists, character deaths, and ending theories without ruining the surprise for others. 
+                        Join the debate on what really happened in the final chapter."
+                    </p>
+                    </div>
+
+                    <div class="review-card reveal">
+                    <img src="community favorite review.png" alt="Community Favorite Reviews">
+                    <h2>Community Favorite Reviews</h2>
+                    <p class="rating">Featured Book Opinions</p>
+                    <p>
+                        Explore honest thoughts from our members on trending books, timeless classics,and exciting new releases. 
+                        From short first impressions to deep, thoughtful analysis, these reviews help readers decide what is worth adding to their reading list.
+                        It is the perfect place to discover books through the voices of real readers.
+                    </p>
+                    </div>
+
+                    <div class="review-card reveal">
+                    <img src="recommendations.png" alt="Recommend Your Next Read">
+                    <h2>Recommend Your Next Read</h2>
+                    <p class="rating">Reader Recommendations</p>
+                    <p>
+                        Looking for a mystery that keeps you guessing, a romance that feels comforting, or a fantasy world you can get lost in? 
+                        Members can recommend books by genre, mood, or reading level,making it easier for others to find something that truly matches their taste and current reading mood.
+                    </p>
+                    </div>
+                </div>
+            </div>
+       </section>
+        
+        <script>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                } else {
+                    entry.target.classList.remove('active');
+                }
+            });
+        }, { threshold: 0.1 });
+
+        const revealElements = document.querySelectorAll('.reveal');
+        revealElements.forEach((el) => observer.observe(el));
+        </script>
+        <script src="javascript.js"></script>
+    </body>
+</html>
