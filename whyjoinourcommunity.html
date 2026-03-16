@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Why Join Our Community</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="style4.css">
+        <style>
+        .reveal{opacity:0;
+                transform:translateY(50px);
+                transition: all 0.8s ease-out;}
+        .reveal.active{opacity:1;
+                       transform: translateY(0);}
+        </style>
+    </head>
+    <body>
+        <section class="reveal">
+            <img src="book community banner two.png" alt="Books and reading community">
+            <h1>Why Join Our Community</h1>
+            <p>
+                Reading might be a solo activity, but it doesn't have to be a lonely one.
+                BookNest is a welcoming space where readers can share reviews, discover
+                new books, and connect with people who enjoy meaningful stories.
+            </p>
+            <a href="home.html">Home Page!</a>
+            <img src="whyjoinourcommunity.jpg" alt="Why Join Our Community">
+        </section>
+
+        <section class="reveal">
+            <h2>Interactive Reading Logs</h2>
+            <h3>Your Literary Legacy, Digitized</h3>
+            <p>Stop losing track of the stories that moved you. 
+            Our interactive reading logs act as a high-tech digital diary for your personal library. 
+            Beyond just marking a book as 'read,' you can document your emotional journey through every chapter. 
+            Rate your favorite titles, write deep-dive reviews for your future self, and organize your collection into custom shelves based on your current mood, favorite tropes, or annual goals. 
+            Watch your reading stats grow and turn your hobby into a beautifully organized archive of your intellectual life</p>
+        </section>
+        
+        <section class="reveal">
+            <h2>Real Time Discussion</h2>
+            <h3>Where the Conversation Never Ends</h3>
+            <p>Ever finished a book at 2:00 AM and desperately needed to scream about that plot twist? 
+            You're not alone here. 
+            Our vibrant forums are the beating heart of our community, offering a space to debate theories, analyze character arcs, and join live, scheduled book clubs. 
+            Whether you're into niche indie poetry or massive epic fantasy sagas, there is always a fellow reader online ready to dive into a discussion. 
+            Connect with people who speak your 'literary language' and turn a solitary activity into a social adventure</p>
+        </section>
+        
+        <section class="reveal">
+            <h2>Personalized Recommendations</h2>
+            <h3>Say Goodbye to the 'Reading Slump'</h3>
+            <p>Stop scrolling through endless, generic bestseller lists that don't match your taste. 
+            Our recommendation engine is powered by real humans—not just cold algorithms. 
+            Discover your next '5-star read' through community-voted lists, genre-specific spotlights, and 'If You Liked This, Try That' suggestions curated by readers who share your specific interests. 
+            Whether you're looking for a hidden gem from a debut author or a classic you somehow missed, we help you cut through the noise so you can spend less time searching and more time reading.</p>
+        </section>
+
+        <section class="testimonials">
+            <h2>Why Readers Love Our Community</h2>
+
+            <div class="member-card reveal">
+                <img src="sarah.png" alt="Sarah">
+                <h3>Sarah J.</h3>
+                <p>
+                    "Since joining this community, I've discovered so many incredible books that I might never have picked up on my own. 
+                    I love reading other members' reviews and getting recommendations from people who share the same passion for reading."
+                </p>
+            </div>
+
+            <div class="member-card reveal">
+                <img src="marcus.png" alt="Marcus">
+                <h3>Marcus T.</h3>
+                <p>
+                    "This community made reading even more enjoyable for me. 
+                    It's amazing to connect with readers who enjoy discussing stories, sharing opinions, and recommending books that truly leave an impact."
+                </p>
+            </div>
+
+            <div class="member-card reveal">
+                <img src="emma.png" alt="Emma">
+                <h3>Emma L.</h3>
+                <p>
+                    "Before joining, I often struggled to find new books to read. 
+                    Now I always have a list of recommendations from other members, and I really enjoy sharing my own thoughts and reviews with the community."
+                </p>
+            </div>
+        </section>
+
+        <section><form id="reviewForm">
+
+        <label>Your Name:</label>
+        <input type="text" id="name">
+
+        <label>Your Review:</label>
+        <textarea id="comment"></textarea>
+
+        <button type="submit">Submit Review</button>
+
+    </form>
+        </section>
+        <script>
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach((entry) => {
+                // If the section is visible on the screen //
+                if (entry.isIntersecting) { 
+                entry.target.classList.add('active'); } else {
+                // Optional: remove this if you only want the animation to happen once //
+                entry.target.classList.remove('active');
+                }
+                });
+                }, { threshold: 0.1 }); // Trigger when 10% of the section is visible //
+                // Tell the observer to watch every element with the 'reveal' class //
+                const revealElements = document.querySelectorAll('.reveal');
+                revealElements.forEach((el) => observer.observe(el));
+        </script>
+        <script src="javascript.js"></script>
+        </body>
+</html>
